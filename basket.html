@@ -77,7 +77,7 @@
 
 
 
-<div class="container-fluid">
+<div class="container-fluid basket-html">
   <div class="row">
     <div class="col-2">
 
@@ -91,7 +91,7 @@
         </div>
     
         <!-- Product #1 -->
-        <div class="item">
+        <!-- <div class="item">
           <div class="buttons">
             <span><i class="btn far fa-trash-alt"></i></span>
           </div>
@@ -102,7 +102,6 @@
     
           <div class="description">
             <span>Common Projects</span>
-            <span>Bball High</span>
             <span>White</span>
           </div>
     
@@ -117,97 +116,7 @@
           </div>
     
           <div class="total-price">$549</div>
-      </div>
-      <!-- End of Product-->
-
-      <!-- Product #2 -->
-      <div class="item">
-        <div class="buttons">
-          <span><i class="btn far fa-trash-alt"></i></span>
-        </div>
-  
-        <div class="image">
-          <img class="product-image" src="images/plak-images/sezen aksu - sen aglama.jpg" alt="" />
-        </div>
-  
-        <div class="description">
-          <span>Common Projects</span>
-          <span>Bball High</span>
-          <span>White</span>
-        </div>
-  
-        <div class="quantity">
-          <button class="minus-btn" type="button" name="button">
-            <i class="fas fa-minus"></i>
-          </button>
-          <input type="text" name="name" value="1">
-          <button class="plus-btn" type="button" name="button">
-            <i class="fas fa-plus"></i>
-          </button>
-        </div>
-  
-        <div class="total-price">$549</div>
-    </div>
-    <!-- End of Product-->
-
-    <!-- Product #3 -->
-    <div class="item">
-      <div class="buttons">
-        <span><i class="btn far fa-trash-alt"></i></span>
-      </div>
-
-      <div class="image">
-        <img class="product-image" src="images/plak-images/sezen aksu - sen aglama.jpg" alt="" />
-      </div>
-
-      <div class="description">
-        <span>Common Projects</span>
-        <span>Bball High</span>
-        <span>White</span>
-      </div>
-
-      <div class="quantity">
-        <button class="minus-btn" type="button" name="button">
-          <i class="fas fa-minus"></i>
-        </button>
-        <input type="text" name="name" value="1">
-        <button class="plus-btn" type="button" name="button">
-          <i class="fas fa-plus"></i>
-        </button>
-      </div>
-
-      <div class="total-price">$549</div>
-  </div>
-  <!-- End of Product-->
-
-  <!-- Product #4 -->
-        <div class="item">
-          <div class="buttons">
-            <span><i class="btn far fa-trash-alt"></i></span>
-          </div>
-    
-          <div class="image">
-            <img class="product-image" src="images/plak-images/sezen aksu - sen aglama.jpg" alt="" />
-          </div>
-    
-          <div class="description">
-            <span>Common Projects</span>
-            <span>Bball High</span>
-            <span>White</span>
-          </div>
-    
-          <div class="quantity">
-            <button class="minus-btn" type="button" name="button">
-              <i class="fas fa-minus"></i>
-            </button>
-            <input type="text" name="name" value="1">
-            <button class="plus-btn" type="button" name="button">
-              <i class="fas fa-plus"></i>
-            </button>
-          </div>
-    
-          <div class="total-price">$549</div>
-      </div>
+      </div> -->
       <!-- End of Product-->
 
       </div>
@@ -220,7 +129,7 @@
       <div class="summary-title"><span>Payment</span></div>
       <div class="summary-price-content">
         <div class="summary-total-price-tite"><span>Total Price</span></div>
-      <div class="summary-total-price">$329.23</div>
+      <div class="summary-total-price"></div>
       </div>
       
       <div class="form-groups">
@@ -236,7 +145,7 @@
             </div>
           </div>
 
-          <div class="form-group col-md-10" style="padding:0">
+          <div class="form-group col-md-12" style="padding:0">
             <label for="inputAddress">Shipping Address</label>
             <input type="text" class="form-control" id="inputAddress" placeholder="Your Address...">
           </div>
@@ -244,24 +153,25 @@
           
         
           <div class="form-group">
-            <label for="exampleFormControlSelect1">Payment Method</label>
-            <select class="form-control" id="paymentMethod">
-              <option>Wire Transfer</option>
-              <option>Credit Card</option>
+            <label for="paymentMethod">Payment Method</label>
+            <select class="form-control" id="paymentMethod" name="payment-methods">
+              <option value="selectcard"><p>---- Please Select ----</p></option>
+              <option value="wire-transfer">Wire Transfer</option>
+              <option value="credit-card">Credit Card</option>
             </select>
           </div>
 
-          <div class="form-group col-md-10" style="padding:0; display:none;">
+          <div class="form-group col-md-12" id="input-wire-transfer"style="padding:0; display:none;">
             <label for="inputWireTransfer">WIRE Transfer Number</label>
             <input type="text" class="form-control" id="info-wire-transfer" placeholder="Wire Tranfer Pin">
           </div>
 
-          <div class="form-group col-md-12" style="padding:0; display:none;">
+          <div class="form-group col-md-12" id="input-credit-card" style="padding:0; display:none;">
             <label for="inputCreditCard">Credit Card Number</label>
-            <input type="text" class="form-control" id="info-credit-card" placeholder="Wire Tranfer Pin">
+            <input type="text" class="form-control" id="info-credit-card" placeholder="Credit Card Number">
           </div>
           <div class="buy-button">
-            <button type="submit" class="btn btn-light active" id="summary-buy-button">Pay and Buy</button>
+            <button class="btn btn-light active" id="summary-buy-button">Pay and Buy</button>
           </div>
           
           
@@ -280,12 +190,13 @@
       <link rel="stylesheet" href="CSS/basket.css">
 
       <!-- JS IMPORT-->
-<script src="JavaScripts/add_cart.js" async></script>
-<script src="JavaScripts/cart.js" async></script>
+<script src="JavaScripts/add_cart.js"></script>
+
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-
+<!--Sweet Alert-->
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </body>
 </html>
