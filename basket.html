@@ -9,8 +9,12 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	
-    <link rel="stylesheet" href="denemeNavbar.css">
+
+    
+    <link rel="icon" href="images/cishop-01.png">
+
+
+    <link rel="stylesheet" href="CSS/navbar.css">
     <link rel="stylesheet" href="CSS/general.css">
     <link rel="stylesheet" href="CSS/basket.css">
 
@@ -21,21 +25,6 @@
 </head>
 <body style="background-color: #ededed">
     
-
-  <!-- <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-      <ul class="navbar-nav ml-auto">
-        
-        <li class="nav-item">
-          <a class="nav-link" href="#" style="color:white"><i class="fas fa-user" style="padding-right: 0.25rem;"></i>Login</a>
-        </li>
-
-        <li class="nav-item">
-              <a class="nav-link" href="basket.html" style="color:white"><i class="fas fa-shopping-basket" style="padding-right: 0.25rem;"></i>Basket
-            </a>
-        </li>
-          
-      </ul>
-  </div> -->
   <section class="ftco-section" style="padding:0 !important;">
 		<div class="container">
 			<div class="row justify-content-center" style="padding-right: 5rem; ">
@@ -67,7 +56,8 @@
 				<div class="col-md-4 d-flex">
 					<div class="social-media">
 		    		<p class="mb-0 d-flex">
-		    		</p>
+		    		
+            </p>
 	        </div>
 				</div>
 			</div>
@@ -86,10 +76,9 @@
           <div class="navbar-nav mr-auto">
             <div class="social-media">
               <p class="mb-0 d-flex">
-                <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
-                <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
-                <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
-                <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-dribbble"><i class="sr-only">Dribbble</i></span></a>
+                <a href="https://www.linkedin.com/in/cihan-sakman-245693168/" class="d-flex align-items-center justify-content-center"><span class="fa fa-linkedin"><i class="sr-only">LinkedIn</i></span></a>
+                <a href="https://twitter.com/LOTCss" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
+                <a href="https://www.instagram.com/cihansakman/" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
               </p>
             </div>
           </div>
@@ -100,16 +89,18 @@
               <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
   
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Page</a>
+                <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
                 <div class="dropdown-menu" aria-labelledby="dropdown04">
-                  <a class="dropdown-item" href="#">Page 1</a>
-                  <a class="dropdown-item" href="#">Page 2</a>
-                  <a class="dropdown-item" href="#">Page 3</a>
-                  <a class="dropdown-item" href="#">Page 4</a>
+                  <a class="dropdown-item" href="#">Rock Music</a>
+                  <a class="dropdown-item" href="#">R&B</a>
+                  <a class="dropdown-item" href="#">Turkish</a>
+                  <a class="dropdown-item" href="#">Pop</a>
                 </div>
               </li>
   
-              <li class="nav-item"><a href="#" class="nav-link">Work</a></li>
+              <li class="nav-item"><a href="#" class="d-flex align-items-center justify-content-center nav-link" id="play-music">
+                <audio class="musicOn" id="music-audio" style="display:none;" src="audios/The Smiths - This Charming Man (Official Music Video) (320  kbps).mp3" controls loop></audio>
+              <span class="fa fa-music"><i class="sr-only">Music</i></span></a></li>
               <li class="nav-item"><a href="#" class="nav-link">Blog</a></li>
               <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
             </ul>
@@ -160,8 +151,8 @@
     <div class="col-6">
       <div class="shopping-cart" id="shopping-cart">
         <!-- Title -->
-        <div class="title">
-          <i class="fa fa-shopping-bag fa-lg" style="color:#F0803C"></i>
+        <div class="title" >
+          <i class="fa fa-shopping-bag fa-lg" style="color:#f4b679"></i>
           Shopping Bag
         </div>
     
@@ -203,7 +194,7 @@
     <div class="summary" style="width:fit-content; height:fit-content; padding: 0.5rem 2rem;">
       <div class="summary-title"><span>Payment</span></div>
       <div class="summary-price-content">
-        <div class="summary-total-price-tite"><span>Total Price</span></div>
+        <div class="summary-total-price-tite"><span style="color:white">Total Price</span></div>
       <div class="summary-total-price"></div>
       </div>
       
@@ -261,12 +252,32 @@
 </div>
 
 
+<div class="container-fluid mt-100">
+  <div class="row">
+      <div class="col-md-12">
+          <div class="card">
+              <div class="card-body cart">
+                  <div class="col-sm-12 empty-cart-cls text-center"> <img src="images/empty-card.png" width="200" height="200" style="margin-bottom:5px !important;" class="img-fluid mb-4 mr-3">
+                      <h3 class="cart-empty-title"><strong>Your Cart is Empty</strong></h3>
+                      <h4 class="cart-empty-content">Grab some R&B and come back here :)</h4> 
+                  </div>
+                  <a href="index.html" id="continue-shopping" class="btn btn-primary " data-abc="true">continue shopping</a>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
       <!-- CSS files-->
     
       
 
         <!-- JS IMPORT-->
 <script src="JavaScripts/add_cart.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule="" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

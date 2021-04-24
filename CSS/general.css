@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
 /* Reset all the margins and paddings */
 *{
     margin:0;
@@ -44,15 +45,27 @@ a, a:hover{
     top:0.2rem;
 }
 
+i.buy-add-icon{
+    margin:0.25rem;
+}
+
 .buy-now-add-basket{
     display:flex;
+    flex-direction: row;
     justify-content: space-between;
 }
 .buy-now-add-basket .add-to-cart-btn.button{
-    justify-content: space-between;
+    /* justify-content: space-between; */
     border-right: 2px solid white;
 }
 
+.buy-now-add-basket .add-to-cart-btn:hover{
+    background-color: #F0803C;
+}
+
+.buy-now-add-basket .buy-now-btn:hover{
+    background-color: #8ec78f;
+}
 /* ARRANGING ROWS AND COLS THREE OF THEM SIDE BY SIDE */
 
 /* Float three columns side by side */
@@ -106,7 +119,7 @@ box-shadow: 4px 4px 8px 10px rgba(0, 0, 0, 0.2);
 }
 
 .price {
-color: grey;
+color: #ff910f;
 font-size: 22px;
 }
 
@@ -115,17 +128,12 @@ border: none;
 outline: 0;
 padding: 12px;
 color: white;
-background-color: #000;
+background-color: #252525;
 text-align: center;
 cursor: pointer;
 width: 100%;
 font-size: 18px;
 }
-
-.product-card .button:hover {
-opacity: 0.6;
-}
-
 
 .product-img{
     width:100%;
@@ -184,4 +192,23 @@ opacity: 0.6;
     padding:0;
 }
 
+
+.product-desc{
     
+    font-family: 'Lobster', cursive;
+    color:	#343d46;
+}
+
+.product-name{
+    font-family: 'Amatic SC', cursive;
+    letter-spacing: 1.2px;
+}
+
+.product-motto{
+    color:#ff910f ;
+    font-family: 'Dancing Script', cursive;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');

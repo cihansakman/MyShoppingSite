@@ -8,10 +8,14 @@
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" href="images/cishop-01.png">
 	
-	<link rel="stylesheet" href="denemeNavbar.css">
+	<link rel="stylesheet" href="CSS/navbar.css">
   <link rel="stylesheet" href="CSS/general.css">
+  <link rel="stylesheet" href="CSS/footer.css">
   <!-- <link rel="stylesheet" href="CSS/basket.css"> -->
+
+ 
 
 	</head>
 	<body style="background-color: #ededed">
@@ -67,10 +71,9 @@
           <div class="navbar-nav mr-auto">
             <div class="social-media">
               <p class="mb-0 d-flex">
-                <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
-                <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
-                <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
-                <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-dribbble"><i class="sr-only">Dribbble</i></span></a>
+                <a href="https://www.linkedin.com/in/cihan-sakman-245693168/" class="d-flex align-items-center justify-content-center"><span class="fa fa-linkedin"><i class="sr-only">LinkedIn</i></span></a>
+                <a href="https://twitter.com/LOTCss" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
+                <a href="https://www.instagram.com/cihansakman/" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
               </p>
             </div>
           </div>
@@ -78,19 +81,21 @@
 
           <div class="navbar-nav mx-auto">
             <ul class="navbar-nav">
-              <li class="nav-item active"><a href="#" class="nav-link">Home</a></li>
+              <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
   
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Page</a>
+                <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
                 <div class="dropdown-menu" aria-labelledby="dropdown04">
-                  <a class="dropdown-item" href="#">Page 1</a>
-                  <a class="dropdown-item" href="#">Page 2</a>
-                  <a class="dropdown-item" href="#">Page 3</a>
-                  <a class="dropdown-item" href="#">Page 4</a>
+                  <a class="dropdown-item" href="#">Rock Music</a>
+                  <a class="dropdown-item" href="#">R&B</a>
+                  <a class="dropdown-item" href="#">Turkish</a>
+                  <a class="dropdown-item" href="#">Pop</a>
                 </div>
               </li>
   
-              <li class="nav-item"><a href="#" class="nav-link">Work</a></li>
+              <li class="nav-item"><a href="#" class="d-flex align-items-center justify-content-center nav-link" id="play-music">
+                <audio class="musicOn" id="music-audio" style="display:none;" src="audios/Sixto Rodriguez - Sugar Man (320  kbps).mp3" controls loop></audio>
+              <span class="fa fa-music"><i class="sr-only">Music</i></span></a></li>
               <li class="nav-item"><a href="#" class="nav-link">Blog</a></li>
               <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
             </ul>
@@ -106,23 +111,6 @@
               </p>
             </div>
           </div>
-	        
-          <!-- <ul class="navbar-nav">
-	        	<li class="nav-item active"><a href="#" class="nav-link">Home</a></li>
-
-	        	<li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Page</a>
-              <div class="dropdown-menu" aria-labelledby="dropdown04">
-              	<a class="dropdown-item" href="#">Page 1</a>
-                <a class="dropdown-item" href="#">Page 2</a>
-                <a class="dropdown-item" href="#">Page 3</a>
-                <a class="dropdown-item" href="#">Page 4</a>
-              </div>
-            </li>
-
-	  
-	        	
-	        </ul> -->
       
 	      </div>
 	    </div>
@@ -132,20 +120,20 @@
 	</section>
 
     <div class="container index-html" style="margin-top:16px;">
-        <p style="text-align: center;">The legendary music is one click away from you...</p>      
+        <p class="product-motto" style="text-align: center;">The legendary music is one click away from you...</p>      
          
       
         <div class="row">
           <div class="column">
             <div class="card product-card">
               <img class="product-img" src="images/plak-images/king crimson.jpg" alt="Denim Jeans">
-              <h1 class="product-name">Tailored Jeans</h1>
+              <h1 class="product-name">King Crimson</h1>
               <p class="product-desc">In the Court of the Crimson King LP</p>
-              <p class="price">$19.99</p>
+              <p class="price">$49.99</p>
               <div class="buy-now-add-basket">
                 <!-- <button class="add-to-cart-btn button" type="submit">Add to Cart</button> -->
-                <a class="add-to-cart-btn button" href="#" role="button">Add to Cart</a>
-                <a class="buy-now-btn button" href="basket.html" role="button">Buy Now</a>
+                <a class="add-to-cart-btn button" href="#" role="button"><i class="fa fa-tags buy-add-icon" aria-hidden="true"></i>Add to Cart</a>
+                <a class="buy-now-btn button" href="basket.html" role="button"><i class="fa fa-shopping-cart buy-add-icon" aria-hidden="true"></i>Buy Now</a>
                 <!-- <button class="buy-now-btn" type="submit"><a href="basket.html">Buy Now</a></button> -->
               </div>
             </div>
@@ -155,12 +143,11 @@
             <div class="card product-card">
               <img class="product-img" src="images/plak-images/rodriguez - searching for sugar man.jpg" alt="Denim Jeans">
               <h1 class="product-name">Rodriguez</h1>
-              <p class="price">$19.99</p>
               <p class="product-desc">Searching For Sugar Man LP.</p>
+              <p class="price">$89.99</p>
               <div class="buy-now-add-basket">
-                <!-- <button class="add-to-cart-btn button" type="submit">Add to Cart</button> -->
-                <a class="add-to-cart-btn button" href="#" role="button">Add to Cart</a>
-                <a class="buy-now-btn button" href="basket.html" role="button">Buy Now</a>
+                <a class="add-to-cart-btn button" href="#" role="button"><i class="fa fa-tags buy-add-icon" aria-hidden="true"></i>Add to Cart</a>
+                <a class="buy-now-btn button" href="basket.html" role="button"><i class="fa fa-shopping-cart buy-add-icon" aria-hidden="true"></i>Buy Now</a>
               </div>
             </div>
           </div>
@@ -169,13 +156,12 @@
           <div class="column">
             <div class="card product-card">
               <img class="product-img" src="images/plak-images/the smiths.jpg" alt="Denim Jeans">
-              <h1 class="product-name">Tailored Jeans0</h1>
-              <p class="price">$19.99</p>
-              <p class="product-desc">Some text about the jeans.</p>
+              <h1 class="product-name">The Smiths</h1>
+              <p class="product-desc">The Queen is Dead LP.</p>
+              <p class="price">$49.99</p>
               <div class="buy-now-add-basket">
-                <!-- <button class="add-to-cart-btn button" type="submit">Add to Cart</button> -->
-                <a class="add-to-cart-btn button" href="#" role="button">Add to Cart</a>
-                <a class="buy-now-btn button" href="basket.html" role="button">Buy Now</a>
+                <a class="add-to-cart-btn button" href="#" role="button"><i class="fa fa-tags buy-add-icon" aria-hidden="true"></i>Add to Cart</a>
+                <a class="buy-now-btn button" href="basket.html" role="button"><i class="fa fa-shopping-cart buy-add-icon" aria-hidden="true"></i>Buy Now</a>
               </div>
             </div>
           </div>
@@ -183,14 +169,13 @@
           <!-- Product -->
           <div class="column">
             <div class="card product-card">
-              <img class="product-img" src="images/plak-images/the smiths.jpg" alt="Denim Jeans">
-              <h1 class="product-name">Tailored Jeans34</h1>
+              <img class="product-img" src="images/plak-images/sezen aksu - sen aglama.jpg" alt="Denim Jeans">
+              <h1 class="product-name">Sezen Aksu</h1>
+              <p class="product-desc">Sen Ağlama LP</p>
               <p class="price">$19.99</p>
-              <p class="product-desc">Some text about the jeans.</p>
               <div class="buy-now-add-basket">
-                <!-- <button class="add-to-cart-btn button" type="submit">Add to Cart</button> -->
-                <a class="add-to-cart-btn button" href="#" role="button">Add to Cart</a>
-                <a class="buy-now-btn button" href="basket.html" role="button">Buy Now</a>
+                <a class="add-to-cart-btn button" href="#" role="button"><i class="fa fa-tags buy-add-icon" aria-hidden="true"></i>Add to Cart</a>
+                <a class="buy-now-btn button" href="basket.html" role="button"><i class="fa fa-shopping-cart buy-add-icon" aria-hidden="true"></i>Buy Now</a>
               </div>
             </div>
           </div>
@@ -199,28 +184,26 @@
            <div class="column">
             <div class="card product-card">
               <img class="product-img" src="images/plak-images/sezen aksu -serçe .jpg" alt="Denim Jeans">
-              <h1 class="product-name">Tailored Jeans6</h1>
-              <p class="price">$19.99</p>
-              <p class="product-desc">Some text about the jeans.</p>
+              <h1 class="product-name">Sezen Aksu</h1>
+              <p class="product-desc">Serçe LP</p>
+              <p class="price">$24.99</p>
               <div class="buy-now-add-basket">
-                <!-- <button class="add-to-cart-btn button" type="submit">Add to Cart</button> -->
-                <a class="add-to-cart-btn button" href="#" role="button">Add to Cart</a>
-                <a class="buy-now-btn button" href="basket.html" role="button">Buy Now</a>
+                <a class="add-to-cart-btn button" href="#" role="button"><i class="fa fa-tags buy-add-icon" aria-hidden="true"></i>Add to Cart</a>
+                <a class="buy-now-btn button" href="basket.html" role="button"><i class="fa fa-shopping-cart buy-add-icon" aria-hidden="true"></i>Buy Now</a>
               </div>
             </div>
           </div>
 
            <!-- Product -->
-           <div class="column">
+          <div class="column">
             <div class="card product-card">
-              <img class="product-img" src="images/plak-images/the smiths.jpg" alt="Denim Jeans">
-              <h1 class="product-name">Tailored Jeans40</h1>
-              <p class="price">$19.99</p>
-              <p class="product-desc">Some text about the jeans.</p>
+              <img class="product-img" src="images/plak-images/Tülay German 1962-87 Kayıtla.jpg" alt="Denim Jeans">
+              <h1 class="product-name">Tülay German</h1>
+              <p class="product-desc">Records of 1962-87 LP</p>
+              <p class="price">$23.99</p>
               <div class="buy-now-add-basket">
-                <!-- <button class="add-to-cart-btn button" type="submit">Add to Cart</button> -->
-                <a class="add-to-cart-btn button" href="#" role="button">Add to Cart</a>
-                <a class="buy-now-btn button" href="basket.html" role="button">Buy Now</a>
+                <a class="add-to-cart-btn button" href="#" role="button"><i class="fa fa-tags buy-add-icon" aria-hidden="true"></i>Add to Cart</a>
+                <a class="buy-now-btn button" href="basket.html" role="button"><i class="fa fa-shopping-cart buy-add-icon" aria-hidden="true"></i>Buy Now</a>
               </div>
             </div>
           </div>
@@ -229,20 +212,54 @@
            <!-- Product -->
            <div class="column">
             <div class="card product-card">
-              <img class="product-img" src="images/plak-images/the smiths.jpg" alt="Denim Jeans">
-              <h1 class="product-name">Tailored Jeans44</h1>
-              <p class="price">$19.99</p>
-              <p class="product-desc">Some text about the jeans.</p>
+              <img class="product-img" src="images/plak-images/Depeche Mode.jpg" alt="Denim Jeans">
+              <h1 class="product-name">Depeche Mode</h1>
+              <p class="product-desc">Vialator LP.</p>
+              <p class="price">$49.99</p>
               <div class="buy-now-add-basket">
-                <!-- <button class="add-to-cart-btn button" type="submit">Add to Cart</button> -->
-                <a class="add-to-cart-btn button" href="#" role="button">Add to Cart</a>
-                <a class="buy-now-btn button" href="basket.html" role="button">Buy Now</a>
+                <a class="add-to-cart-btn button" href="#" role="button"><i class="fa fa-tags buy-add-icon" aria-hidden="true"></i>Add to Cart</a>
+                <a class="buy-now-btn button" href="basket.html" role="button"><i class="fa fa-shopping-cart buy-add-icon" aria-hidden="true"></i>Buy Now</a>
               </div>
             </div>
           </div>
+
+          
+          <!-- Product -->
+          <div class="column">
+            <div class="card product-card">
+              <img class="product-img" src="images/plak-images/Arctic Monkeys.jpg" alt="Denim Jeans">
+              <h1 class="product-name">Arctic Monkeys</h1>
+              <p class="product-desc">Suck It and See LP</p>
+              <p class="price">$46.99</p>
+              <div class="buy-now-add-basket">
+                <a class="add-to-cart-btn button" href="#" role="button"><i class="fa fa-tags buy-add-icon" aria-hidden="true"></i>Add to Cart</a>
+                <a class="buy-now-btn button" href="basket.html" role="button"><i class="fa fa-shopping-cart buy-add-icon" aria-hidden="true"></i>Buy Now</a>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Product -->
+          <div class="column">
+            <div class="card product-card">
+              <img class="product-img" src="images/plak-images/Madonna.jpg" alt="Denim Jeans">
+              <h1 class="product-name">Madonna</h1>
+              <p class="product-desc">Confessions on a Dance Floor LP</p>
+              <p class="price">$57.98</p>
+              <div class="buy-now-add-basket">
+                <a class="add-to-cart-btn button" href="#" role="button"><i class="fa fa-tags buy-add-icon" aria-hidden="true"></i>Add to Cart</a>
+                <a class="buy-now-btn button" href="basket.html" role="button"><i class="fa fa-shopping-cart buy-add-icon" aria-hidden="true"></i>Buy Now</a>
+              </div>
+            </div>
+          </div> 
 
       
         </div>
+
+
+       
+        
+    
 
 
         <!-- JS IMPORT-->
@@ -254,6 +271,8 @@
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     
 	</body>
-    
+ 
+
+
 </html>
 

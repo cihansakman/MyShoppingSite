@@ -7,6 +7,19 @@ const summary = document.querySelector(".summary");
 const summary_total_price = document.querySelector(".summary-total-price");
 const payment_method = document.getElementById("paymentMethod");
 const pay_and_buy_button = document.querySelector("#summary-buy-button");
+const basket_empty = document.querySelector(".container-fluid.mt-100");
+
+//Music play
+let on_off = document.getElementById("play-music");
+let audio = document.getElementById('music-audio');
+on_off.onclick = function() {
+    audio.paused ? audio.play() : music_stop();
+  }
+  function music_stop() {
+    audio.pause();
+    audio.currentTime = 0;
+  }
+
 //Classes
 //Class Product
 class Product {
@@ -64,13 +77,14 @@ function addToBasket(e){
             title: 'Added to card!',
             
           })
-
+          e.preventDefault();
     }else if(e.target.className === "buy-now-btn button"){
         const product_card = e.target.parentElement.parentElement.childNodes;
         const product = makeProduct(product_card);
         addProduct(product);
 
     }
+    
 }
 
 //Make product as a Product Class member
@@ -215,15 +229,22 @@ function loadAllItemsToUI(){
               </div>
         
               <div class="quantity">
-                <button class="minus-btn" type="button" name="button">
-                    <!-- <i class="fas fa-angle-down"></i> -->
+                <!-- <button class="minus-btn" type="button" name="button">
+                   
                     <i class="fa fa-caret-down fa-lg"></i>
-                </button>
+                </button> -->
+
+                <i id="minus-btn" class="fa fa-chevron-circle-down fa-lg" aria-hidden="true"></i>
+
+                <!-- <ion-icon size="large" class="minus-btn" aria-label="none" name="caret-down-circle-outline" style="color:orange;"></ion-icon> -->
                 <input class="quantity-input" "type="number" name="name" value="${product.inCart}">
-                <button class="plus-btn" type="button" name="button">
-                    <!-- <i class="fas fa-angle-up"></i> -->
-                    <i class="fa fa-caret-up fa-lg"></i>
-                </button>
+                <!-- <ion-icon size="large" class="plus-btn" name="caret-up-circle-outline" style="color:orange;"></ion-icon> -->
+                <i id="plus-btn" class="fa fa-chevron-circle-up fa-lg" aria-hidden="true"></i>
+
+                <!-- <button class="plus-btn" type="button" name="button">
+                     <i class="fas fa-angle-up"></i> 
+                    
+                </button> -->
               </div>
         
               <div class="total-price">$${total_price.toPrecision(4)}</div>
@@ -350,16 +371,22 @@ function isBasketEmpty(){
     var products = getProductsFromStorage();
     if(getProductsFromStorage == null || summary_total_price.innerHTML == "$0.000" ){
         summary.style.display = "none";
+        shopping_card.style.display="none";
+        basket_empty.style.display = "block";
     
  
     }
     else{
         if(summary_total_price.innerHTML == "$0.000"){
             summary.style.display = "none";
+            shopping_card.style.display="none";
+            basket_empty.style.display = "inline-block";
          
         }
         else{
             summary.style.display = "inline-block";
+            shopping_card.style.display="block";
+            basket_empty.style.display = "none";
         }
     }
 
@@ -381,13 +408,13 @@ function payAndBuy(e){
     showCancelButton: true,
     confirmButtonColor: '#3085d6',
     cancelButtonColor: '#d33',
-    confirmButtonText: 'Yes, delete it!'
+    confirmButtonText: 'Yes, buy it!'
     }).then((result) => {
     if (result.isConfirmed) {
         removeAllProductsFromStorage();
         Swal.fire(
-        'Deleted!',
-        'Your file has been deleted.',
+        'Successed!',
+        'Enjoy with best music in the planet!',
         'success'
         )
         check = 1;
@@ -415,9 +442,10 @@ function removeAllProductsFromStorage(){
 
 //Event Capturing for changing quantity.
 function updateQuantityInput(e){
-   if(e.target.className === "minus-btn"){
+    console.log("id",e.target.id)
+   if(e.target.id === "minus-btn"){
     e.target.addEventListener("click", minusPlusQuantity);
-   }else if(e.target.className === "plus-btn"){
+   }else if(e.target.id === "plus-btn"){
     e.target.addEventListener("click", minusPlusQuantity);
    }else if(e.target.className === "quantity-input"){
     e.target.addEventListener("change",quantityChanged);
@@ -464,14 +492,13 @@ function updateItemAfterQuantityChanged(itemName, itemPrice, newQuantity){
 
 //When quantity decreas button clicked
 //We'll use this rather than e.target because when we clicked the button it gets <i> as a target. We want to get rid of this situation.
-function minusPlusQuantity(){
-    console.log("ldlld");
+function minusPlusQuantity(e){
     let newQuantity;
-   if(this.className === "minus-btn"){
+   if(this.id === "minus-btn"){
     newQuantity= this.nextElementSibling.value;
     this.nextElementSibling.value -= 1;
     newQuantity -= 1;}
-   else if(this.className === "plus-btn"){
+   else if(this.id === "plus-btn"){
     newQuantity = parseInt(this.previousElementSibling.value);
     newQuantity += 1;
     this.previousElementSibling.value = newQuantity;
