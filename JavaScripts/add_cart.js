@@ -18,7 +18,7 @@ on_off.onclick = function() {
   function music_stop() {
     audio.pause();
     audio.currentTime = 0;
-  }
+}
 
 //Classes
 //Class Product
@@ -31,9 +31,13 @@ class Product {
       this.inCart = 0;
     }
   }   
+
+
+//Call all eventListeners when page loaded.
 eventListeners();
 
-function eventListeners(){ //All event listeners will be here.
+//All event listeners will be here.
+function eventListeners(){ 
     if(index_html){
         row.addEventListener("click",addToBasket);
     }
@@ -50,7 +54,7 @@ function eventListeners(){ //All event listeners will be here.
 
 }
 
-//Event Capturing
+//With event Capturing we'll get which button clicked and according that also get the item information then add it to the storage
 function addToBasket(e){
     if(e.target.className === "add-to-cart-btn button"){
         const product_card = e.target.parentElement.parentElement.childNodes;
@@ -117,10 +121,6 @@ function makeProduct(card_body){
 function addProduct(product){
         // //Store the todos in the LocalStorage
         addProductToStorage(product);
-        // showAlert("success","Todo successfully added.");
-        //Aldığımız todo'yu ListItem olarak eklemek için yeni bir fonksiyon yazacağız.
-        
-        
     // e.preventDefault();
 }
 
@@ -176,9 +176,9 @@ function loadAllItemsToUI(){
   //Our product is object of Product Class.
   function addProductToUI(product){
   
-    // bu şekilde devam edeceğiz. storage'dan alıp değiştirmeye çalışalım
-  //item'in inner HTML'ini <div class="item> oluşturduktan sonra copy paste vercez.
-  /* bunları class'i shopping-cart olan yere ekleyeceğiz.
+
+    //First create a div and give className after that give the innerHTML in Template Mode.
+    /* We'll create an element as follow and append it to shopping_card as child.
   
   <div class="item">
             <div class="buttons">
@@ -262,6 +262,7 @@ function loadAllItemsToUI(){
 }
   
 //When user want to remove item from cart
+//When everything is done reload the page(There is a problem with that!)
 function removeProductFromCart(e){
     //if remove button clicked
     if(e.target.className === "btn fa fa-trash-o fa-lg delete-btn"){
@@ -420,11 +421,6 @@ function payAndBuy(e){
         check = 1;
     }
     });
-    console.log(check);
-    // result.isConfirmed.then(() => { location.reload(); });
-    if(check==1){
-        window.location.reload();
-    }
     
     
    e.preventDefault();
@@ -436,8 +432,6 @@ function removeAllProductsFromStorage(){
     localStorage.removeItem("products");
 }
 
-
-//pay and buy dedikten sonra sayfa güncellenmeli....
 
 
 //Event Capturing for changing quantity.
@@ -480,7 +474,7 @@ function quantityChanged(e){
     updateSummaryBasket();
 }
 
-
+//When the quantity change we'll update the total costs
 function updateItemAfterQuantityChanged(itemName, itemPrice, newQuantity){
     let products = getProductsFromStorage();
     products[itemName].inCart = newQuantity;
