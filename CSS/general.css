@@ -7,8 +7,10 @@ nav{
     background-color: #000411 !important;
 }
 
-a{
-    color:white !important;
+a, a:hover{
+
+    text-decoration: none;
+    
 }
 /* SLOGAN */
 #slogan{
@@ -44,10 +46,11 @@ a{
 
 .buy-now-add-basket{
     display:flex;
-}
-.buy-now-add-basket .add-to-cart-btn{
     justify-content: space-between;
-    border-right: 1px solid white;
+}
+.buy-now-add-basket .add-to-cart-btn.button{
+    justify-content: space-between;
+    border-right: 2px solid white;
 }
 
 /* ARRANGING ROWS AND COLS THREE OF THEM SIDE BY SIDE */
@@ -107,7 +110,7 @@ color: grey;
 font-size: 22px;
 }
 
-.product-card button {
+.product-card .button {
 border: none;
 outline: 0;
 padding: 12px;
@@ -119,12 +122,14 @@ width: 100%;
 font-size: 18px;
 }
 
-.product-card button:hover {
+.product-card .button:hover {
 opacity: 0.6;
 }
 
 
-
+.product-img{
+    width:100%;
+}
 .searchbar{
     margin-bottom: auto;
     margin-top: auto;

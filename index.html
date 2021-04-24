@@ -1,170 +1,259 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <title>CiShopping</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+  	<title>CiShop</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
 
-<!-- CSS Bootstrap4-->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<!-- FontAwesome -->
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="denemeNavbar.css">
+  <link rel="stylesheet" href="CSS/general.css">
+  <!-- <link rel="stylesheet" href="CSS/basket.css"> -->
 
-</head>
-<body>
+	</head>
+	<body style="background-color: #ededed">
 
-
-<!-- SLOGAN -->
-<div class="container-fluid" id="slogan">
-  <pre>
-      <img class="plak-logo rounded-circle" alt="plak-logo" src="images/plak1.png">
-      FEEL THE MUSIC
-      BE THE MUSIC
-  </pre>
-</div>
-
-<!-- example 2 - using auto margins -->
-<nav class="navbar navbar-expand-md navbar-dark bg-dark" style="padding:1rem; background-color:black !important;">
-<div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
-    <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="index.html">Home</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="//codeply.com">Codeply</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-        </li>
-    </ul>
-</div>
-<div class="mx-auto order-0">
-
-  <div class="d-flex justify-content-center h-100">
-      <div class="searchbar">
-        <input class="search_input" type="text" name="" placeholder="Search...">
-        <a href="#" class="search_icon"><i class="fas fa-search" style="color:black;"></i>
-        </a>
-      </div>
-    </div>
-
-</div>
+	<section class="ftco-section" style="padding:0 !important;">
+		<div class="container">
+			<div class="row justify-content-center" style="padding-right: 5rem; ">
+				<div class="col-md-6 text-center mb-5" style="margin-bottom:0 !important;">
+					<!-- <h2 class="heading-section">FEEL THE MUSIC<br> BE THE MUSIC</h2> -->
+          <img class="justify-content-center" src="images/slogan.png" style="width: 100%;">
+				</div>
+			</div>
+		</div>
+		
+		<div class="container-fluid px-md-5" >
+			<div class="row justify-content-between">
+				<div class="col-md-8 order-md-last">
+					<div class="row">
+						<div class="col-md-6 text-center">
+							<img src="images/cishop-01.png" style="width:150px">
+						</div>
+                        <!-- Search -->
+						<div class="col-md-6 d-md-flex justify-content-end mb-md-0 mb-3">
+							<form action="#" class="searchform order-lg-last">
+			          <div class="form-group d-flex">
+			            <input type="text" class="form-control pl-3" placeholder="Search">
+			            <button type="submit" class="form-control search"><span class="fa fa-search"></span></button>
+			          </div>
+			        </form>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 d-flex">
+					<div class="social-media">
+		    		<p class="mb-0 d-flex">
+		    		
+            </p>
+	        </div>
+				</div>
+			</div>
+		</div>
 
 
-<div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="#" style="color:white"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-person-fill" viewBox="0 0 20 16">
-          <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-        </svg>Login</a>
-      </li>
+		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container-fluid">
+	    
+        <!-- Responsive -->
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="fa fa-bars"></span> Menu
+	      </button>
 
-      <li class="nav-item">
-            <a class="nav-link" href="basket.html" style="color:white"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-cart3" viewBox="0 0 20 16">
-              <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-            </svg>Basket
-          </a>
-      </li>
-        
-    </ul>
-</div>
-</nav>
+	      <div class="collapse navbar-collapse" id="ftco-nav" >
+          <div class="navbar-nav mr-auto">
+            <div class="social-media">
+              <p class="mb-0 d-flex">
+                <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
+                <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
+                <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
+                <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-dribbble"><i class="sr-only">Dribbble</i></span></a>
+              </p>
+            </div>
+          </div>
 
-<!-- Plakları ekleyerek devam et. -->
-<!-- Plaklar -->
-<div class="container index-html">
-  <p style="text-align: center;">The legendary music is one click away from you...</p>      
-   
 
-  <div class="row">
-    <div class="column">
-      <div class="card product-card">
-        <img id="product-img" class="product-img" src="images/plak-images/king crimson.jpg" alt="Denim Jeans" style="width:100%">
-        <h1 class="product-name">Tailored Jeans</h1>
-        <p class="price">$19.99</p>
-        <p class="product-desc">In the Court of the Crimson King LP</p>
-        <div class="buy-now-add-basket">
-          <button class="add-to-cart-btn" type="submit">Add to Cart</button>
-          <button class="buy-now-btn" type="submit">Buy Now</button>
-        </div>
-      </div>
-    </div>
+          <div class="navbar-nav mx-auto">
+            <ul class="navbar-nav">
+              <li class="nav-item active"><a href="#" class="nav-link">Home</a></li>
   
-    <div class="column">
-      <div class="card product-card">
-        <img id="product-img" class="product-img" src="images/plak-images/rodriguez - searching for sugar man.jpg" alt="Denim Jeans" style="width:100%">
-        <h1 class="product-name">Rodriguez</h1>
-        <p class="price">$19.99</p>
-        <p class="product-desc">Searching For Sugar Man LP.</p>
-        <div class="buy-now-add-basket">
-          <button class="add-to-cart-btn" type="submit">Add to Cart</button>
-          <button class="buy-now-btn" type="submit">Buy Now</button>
-        </div>
-      </div>
-    </div>
-    
-    
-    
-    <div class="column">
-      <div class="card product-card">
-        <img id="product-img" class="product-img" src="images/plak-images/sezen aksu -serçe .jpg" alt="Denim Jeans" style="width:100%">
-        <h1 class="product-name">Tailored Jeans4</h1>
-        <p class="price">$19.99</p>
-        <p class="product-desc">Some text about the jeans.</p>
-        <div class="buy-now-add-basket">
-          <button class="add-to-cart-btn" type="submit">Add to Cart</button>
-          <button class="buy-now-btn" type="submit">Buy Now</button>
-        </div>
-      </div>
-    </div>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Page</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown04">
+                  <a class="dropdown-item" href="#">Page 1</a>
+                  <a class="dropdown-item" href="#">Page 2</a>
+                  <a class="dropdown-item" href="#">Page 3</a>
+                  <a class="dropdown-item" href="#">Page 4</a>
+                </div>
+              </li>
+  
+              <li class="nav-item"><a href="#" class="nav-link">Work</a></li>
+              <li class="nav-item"><a href="#" class="nav-link">Blog</a></li>
+              <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+            </ul>
+  
+          </div>
 
-    <div class="column">
-      <div class="card product-card">
-        <img id="product-img" class="product-img" src="images/plak-images/the prodigy.jpg" alt="Denim Jeans" style="width:100%">
-        <h1 class="product-name">Tailored Jeans6</h1>
-        <p class="price">$19.99</p>
-        <p class="product-desc">Some text about the jeans.</p>
-        <div class="buy-now-add-basket">
-          <button class="add-to-cart-btn" type="submit">Add to Cart</button>
-          <button class="buy-now-btn" type="submit">Buy Now</button>
-        </div>
+
+          <div class="navbar-nav ml-auto">
+            <div class="basket-login">
+              <p class="mb-0 d-flex">
+                <a href="#" class="basket-login-cover nav-link d-flex align-items-center justify-content-center"><span><i class="fa fa-user fa-md"></i>Login</span></a>
+                <a href="basket.html" class="basket-login-cover nav-link d-flex align-items-center justify-content-center"><span><i class="fa fa-shopping-cart fa-md"></i>Cart</span></a>
+              </p>
+            </div>
+          </div>
+	        
+          <!-- <ul class="navbar-nav">
+	        	<li class="nav-item active"><a href="#" class="nav-link">Home</a></li>
+
+	        	<li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Page</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown04">
+              	<a class="dropdown-item" href="#">Page 1</a>
+                <a class="dropdown-item" href="#">Page 2</a>
+                <a class="dropdown-item" href="#">Page 3</a>
+                <a class="dropdown-item" href="#">Page 4</a>
+              </div>
+            </li>
+
+	  
+	        	
+	        </ul> -->
+      
+	      </div>
+	    </div>
+	  </nav>
+    <!-- END nav -->
+
+	</section>
+
+    <div class="container index-html" style="margin-top:16px;">
+        <p style="text-align: center;">The legendary music is one click away from you...</p>      
+         
+      
+        <div class="row">
+          <div class="column">
+            <div class="card product-card">
+              <img class="product-img" src="images/plak-images/king crimson.jpg" alt="Denim Jeans">
+              <h1 class="product-name">Tailored Jeans</h1>
+              <p class="product-desc">In the Court of the Crimson King LP</p>
+              <p class="price">$19.99</p>
+              <div class="buy-now-add-basket">
+                <!-- <button class="add-to-cart-btn button" type="submit">Add to Cart</button> -->
+                <a class="add-to-cart-btn button" href="#" role="button">Add to Cart</a>
+                <a class="buy-now-btn button" href="basket.html" role="button">Buy Now</a>
+                <!-- <button class="buy-now-btn" type="submit"><a href="basket.html">Buy Now</a></button> -->
+              </div>
+            </div>
+          </div>
         
-      </div>
-    </div>
+          <div class="column">
+            <div class="card product-card">
+              <img class="product-img" src="images/plak-images/rodriguez - searching for sugar man.jpg" alt="Denim Jeans">
+              <h1 class="product-name">Rodriguez</h1>
+              <p class="price">$19.99</p>
+              <p class="product-desc">Searching For Sugar Man LP.</p>
+              <div class="buy-now-add-basket">
+                <!-- <button class="add-to-cart-btn button" type="submit">Add to Cart</button> -->
+                <a class="add-to-cart-btn button" href="#" role="button">Add to Cart</a>
+                <a class="buy-now-btn button" href="basket.html" role="button">Buy Now</a>
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="column">
+            <div class="card product-card">
+              <img class="product-img" src="images/plak-images/the smiths.jpg" alt="Denim Jeans">
+              <h1 class="product-name">Tailored Jeans0</h1>
+              <p class="price">$19.99</p>
+              <p class="product-desc">Some text about the jeans.</p>
+              <div class="buy-now-add-basket">
+                <!-- <button class="add-to-cart-btn button" type="submit">Add to Cart</button> -->
+                <a class="add-to-cart-btn button" href="#" role="button">Add to Cart</a>
+                <a class="buy-now-btn button" href="basket.html" role="button">Buy Now</a>
+              </div>
+            </div>
+          </div>
 
-    <div class="column">
-      <div class="card product-card">
-        <img id="product-img" class="product-img" src="images/plak-images/the smiths.jpg" alt="Denim Jeans" style="width:100%">
-        <h1 class="product-name">Tailored Jeans44</h1>
-        <p class="price">$19.99</p>
-        <p class="product-desc">Some text about the jeans.</p>
-        <div class="buy-now-add-basket">
-          <button class="add-to-cart-btn" type="submit">Add to Cart</button>
-          <button class="buy-now-btn" type="submit">Buy Now</button>
+          <!-- Product -->
+          <div class="column">
+            <div class="card product-card">
+              <img class="product-img" src="images/plak-images/the smiths.jpg" alt="Denim Jeans">
+              <h1 class="product-name">Tailored Jeans34</h1>
+              <p class="price">$19.99</p>
+              <p class="product-desc">Some text about the jeans.</p>
+              <div class="buy-now-add-basket">
+                <!-- <button class="add-to-cart-btn button" type="submit">Add to Cart</button> -->
+                <a class="add-to-cart-btn button" href="#" role="button">Add to Cart</a>
+                <a class="buy-now-btn button" href="basket.html" role="button">Buy Now</a>
+              </div>
+            </div>
+          </div>
+
+           <!-- Product -->
+           <div class="column">
+            <div class="card product-card">
+              <img class="product-img" src="images/plak-images/sezen aksu -serçe .jpg" alt="Denim Jeans">
+              <h1 class="product-name">Tailored Jeans6</h1>
+              <p class="price">$19.99</p>
+              <p class="product-desc">Some text about the jeans.</p>
+              <div class="buy-now-add-basket">
+                <!-- <button class="add-to-cart-btn button" type="submit">Add to Cart</button> -->
+                <a class="add-to-cart-btn button" href="#" role="button">Add to Cart</a>
+                <a class="buy-now-btn button" href="basket.html" role="button">Buy Now</a>
+              </div>
+            </div>
+          </div>
+
+           <!-- Product -->
+           <div class="column">
+            <div class="card product-card">
+              <img class="product-img" src="images/plak-images/the smiths.jpg" alt="Denim Jeans">
+              <h1 class="product-name">Tailored Jeans40</h1>
+              <p class="price">$19.99</p>
+              <p class="product-desc">Some text about the jeans.</p>
+              <div class="buy-now-add-basket">
+                <!-- <button class="add-to-cart-btn button" type="submit">Add to Cart</button> -->
+                <a class="add-to-cart-btn button" href="#" role="button">Add to Cart</a>
+                <a class="buy-now-btn button" href="basket.html" role="button">Buy Now</a>
+              </div>
+            </div>
+          </div>
+
+
+           <!-- Product -->
+           <div class="column">
+            <div class="card product-card">
+              <img class="product-img" src="images/plak-images/the smiths.jpg" alt="Denim Jeans">
+              <h1 class="product-name">Tailored Jeans44</h1>
+              <p class="price">$19.99</p>
+              <p class="product-desc">Some text about the jeans.</p>
+              <div class="buy-now-add-basket">
+                <!-- <button class="add-to-cart-btn button" type="submit">Add to Cart</button> -->
+                <a class="add-to-cart-btn button" href="#" role="button">Add to Cart</a>
+                <a class="buy-now-btn button" href="basket.html" role="button">Buy Now</a>
+              </div>
+            </div>
+          </div>
+
+      
         </div>
-      </div>
-    </div>
 
-  </div>
-</div>
 
-<!-- CSS IMPORT-->
-<link rel="stylesheet" href="CSS/general.css">
-
-<!-- JS IMPORT-->
+        <!-- JS IMPORT-->
 <script src="JavaScripts/add_cart.js" async></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <!--Sweet Alert-->
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-</body>
+    
+	</body>
+    
 </html>
+

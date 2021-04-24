@@ -1,0 +1,50 @@
+.dropdown-menu.dropdown-menu-right .dropdown-item{
+    background-color: orange; 
+}
+
+.nav-link:hover{
+    color:crimson !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Right */
+.user-cover{
+    width:fit-content;
+    background-color:rgb(228, 224, 218);
+    margin-right:3rem;
+    border-radius: 5px;
+}
+
+.cart-cover{
+    display:flex;
+    justify-content: center;
+    width:fit-content;
+    background-color:rgb(228, 224, 218);
+    margin-right:10rem;
+}

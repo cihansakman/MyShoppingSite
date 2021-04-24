@@ -2,10 +2,10 @@
     box-sizing: border-box;
   }
    
-  html,
+  /* html,
   body {
     font-family: 'Roboto', sans-serif;
-  }
+  } */
 
   .shopping-cart {
     /* width: 40%;
@@ -82,13 +82,16 @@
     color: #86939E;
   }
 
+  /*Quantity */
   .quantity {
     padding-top: 20px;
     margin-right: 60px;
   }
   .quantity input {
     -webkit-appearance: none;
-    border:2px solid #053966;
+    /* border:1px solid #053966; */
+    border : none;
+    background-color:Transparent ;
     border-radius: 2px;
     text-align: center;
     width: 32px;
@@ -100,11 +103,18 @@
   button[class*=btn] {
     width: 30px;
     height: 30px;
-    background-color: #E1E8EE;
-    border-radius: 6px;
+    background-color: #999999;
+    border-radius:40px;
     border: none;
     cursor: pointer;
-    margin:5px 0;
+    margin:3px 0;
+    /* background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none; */
+    
   }
   /* Butona tıklandığında */
   button[class*=btn]:active {
@@ -115,6 +125,16 @@
   button:focus,
   input:focus {
     outline:0;
+  }
+
+
+  .fa.fa-caret-up.fa-lg, .fa.fa-caret-down.fa-lg{
+    color:orange;
+  
+  }
+ 
+.minus-btn, .plus-btn{
+    background-color:floralwhite !important;
   }
 
   .total-price {
@@ -154,7 +174,7 @@
 
 
   
-.summary-price-content {
+.summary-price-content{
   margin:0.25rem 0;
   padding: 5px 5px;
   /* height: auto; */
@@ -167,13 +187,43 @@
   color:#F0803C;
 
 }
-.buy-button{
+/* .buy-button{
   display:flex;
   justify-content: center;
-}
+} */
+
 #summary-buy-button{
+  display:flex;
+  justify-content: center;
   width:fit-content;
   background-color:#F0803C;
+  margin-top:0.5rem;
+  border-radius: 5px;
+  color:rgb(24, 22, 18);
+  padding:0.25rem 0.75rem;
+  margin-left: auto;
+  margin-right: auto;
+}
 
+#summary-buy-button:hover{
+  width:fit-content;
+  background-color:#8ec78f;
+  margin-top:0.5rem;
+  border-radius: 5px;
+  color:white;
+  padding:0.25rem 0.75rem;
+}
 
+.form-control.basket{
+  border-radius: 5px !important;
+  margin:0 !important;
+  height:fit-content !important;
+}
+
+.form-group{
+  margin-bottom:0;
+}
+
+label{
+  margin-bottom: 2px;
 }

@@ -1,12 +1,12 @@
 //Select all element
-const row = document.querySelector(".row");
+const row = document.querySelector(".container.index-html");
 const shopping_card = document.querySelector("#shopping-cart");
 const basket_html = document.querySelector(".basket-html");
 const index_html = document.querySelector(".index-html");
 const summary = document.querySelector(".summary");
 const summary_total_price = document.querySelector(".summary-total-price");
 const payment_method = document.getElementById("paymentMethod");
-const pay_and_buy_button = document.querySelector(".buy-button");
+const pay_and_buy_button = document.querySelector("#summary-buy-button");
 //Classes
 //Class Product
 class Product {
@@ -17,8 +17,7 @@ class Product {
       this.price = price;
       this.inCart = 0;
     }
-  }
-
+  }   
 eventListeners();
 
 function eventListeners(){ //All event listeners will be here.
@@ -40,10 +39,37 @@ function eventListeners(){ //All event listeners will be here.
 
 //Event Capturing
 function addToBasket(e){
-    if(e.target.className === "add-to-cart-btn"){
+    if(e.target.className === "add-to-cart-btn button"){
         const product_card = e.target.parentElement.parentElement.childNodes;
         const product = makeProduct(product_card);
         addProduct(product); //product is a member of Product Class.
+
+        //Alert message.
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 2000,
+            timerProgressBar: true,
+            width: "20rem",
+            background: "#1ffff",
+            didOpen: (toast) => {
+              toast.addEventListener('mouseenter', Swal.stopTimer)
+              toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+          })
+          
+          Toast.fire({
+            icon: 'success',
+            title: 'Added to card!',
+            
+          })
+
+    }else if(e.target.className === "buy-now-btn button"){
+        const product_card = e.target.parentElement.parentElement.childNodes;
+        const product = makeProduct(product_card);
+        addProduct(product);
+
     }
 }
 
@@ -176,7 +202,7 @@ function loadAllItemsToUI(){
     newItem.className = "item";
     var innerNewItem = `
     <div class="buttons">
-                <span><i class="btn far fa-trash-alt"></i></span>
+                <span><i class="btn fa fa-trash-o fa-lg delete-btn"></i></span>
               </div>
         
               <div class="image">
@@ -190,11 +216,13 @@ function loadAllItemsToUI(){
         
               <div class="quantity">
                 <button class="minus-btn" type="button" name="button">
-                  <i class="fas fa-minus"></i>
+                    <!-- <i class="fas fa-angle-down"></i> -->
+                    <i class="fa fa-caret-down fa-lg"></i>
                 </button>
-                <input class="quantity-input" "type="text" name="name" value="${product.inCart}">
+                <input class="quantity-input" "type="number" name="name" value="${product.inCart}">
                 <button class="plus-btn" type="button" name="button">
-                  <i class="fas fa-plus"></i>
+                    <!-- <i class="fas fa-angle-up"></i> -->
+                    <i class="fa fa-caret-up fa-lg"></i>
                 </button>
               </div>
         
@@ -215,7 +243,7 @@ function loadAllItemsToUI(){
 //When user want to remove item from cart
 function removeProductFromCart(e){
     //if remove button clicked
-    if(e.target.className === "btn far fa-trash-alt"){
+    if(e.target.className === "btn fa fa-trash-o fa-lg delete-btn"){
         //We removed the item from shopping-card
         var remove_item = e.target.parentElement.parentElement.parentElement;
         remove_item.remove();
@@ -229,6 +257,27 @@ function removeProductFromCart(e){
             }
         
         });
+
+        //Alert message.
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 2000,
+            timerProgressBar: true,
+            width: "20rem",
+            background: "#1ffff",
+            didOpen: (toast) => {
+              toast.addEventListener('mouseenter', Swal.stopTimer)
+              toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+          })
+          
+          Toast.fire({
+            icon: 'error',
+            title: 'Item removed from cart!',
+            
+          })
 
     }
     
@@ -301,11 +350,13 @@ function isBasketEmpty(){
     var products = getProductsFromStorage();
     if(getProductsFromStorage == null || summary_total_price.innerHTML == "$0.000" ){
         summary.style.display = "none";
+    
  
     }
     else{
         if(summary_total_price.innerHTML == "$0.000"){
             summary.style.display = "none";
+         
         }
         else{
             summary.style.display = "inline-block";
@@ -315,13 +366,15 @@ function isBasketEmpty(){
 
 }
 
+
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 //When payment is done
 function payAndBuy(e){
-        Swal.fire({
+    let check = 0;
+      Swal.fire({
     title: 'Are you sure?',
     text: "You won't be able to revert this!",
     icon: 'warning',
@@ -337,9 +390,16 @@ function payAndBuy(e){
         'Your file has been deleted.',
         'success'
         )
+        check = 1;
     }
     });
-    // sleep(1600).then(() => { location.reload(); });
+    console.log(check);
+    // result.isConfirmed.then(() => { location.reload(); });
+    if(check==1){
+        window.location.reload();
+    }
+    
+    
    e.preventDefault();
     
 }
@@ -355,10 +415,10 @@ function removeAllProductsFromStorage(){
 
 //Event Capturing for changing quantity.
 function updateQuantityInput(e){
-   if(e.target.className === "fas fa-minus"){
-    console.log("minus");
-   }else if(e.target.className === "fas fa-plus"){
-    console.log("plus");
+   if(e.target.className === "minus-btn"){
+    e.target.addEventListener("click", minusPlusQuantity);
+   }else if(e.target.className === "plus-btn"){
+    e.target.addEventListener("click", minusPlusQuantity);
    }else if(e.target.className === "quantity-input"){
     e.target.addEventListener("change",quantityChanged);
    }
@@ -387,12 +447,61 @@ function quantityChanged(e){
     
     });
 
+    
+    updateItemAfterQuantityChanged(itemName, itemPrice, newQuantity);
+    updateSummaryBasket();
+}
+
+
+function updateItemAfterQuantityChanged(itemName, itemPrice, newQuantity){
     let products = getProductsFromStorage();
     products[itemName].inCart = newQuantity;
     localStorage.setItem("products",JSON.stringify(products));
     let newPrice = (split_price(products[itemName].price)*newQuantity).toPrecision(4);
     itemPrice.innerHTML = `$${newPrice}` ;
-    updateSummaryBasket();
 
+}
+
+//When quantity decreas button clicked
+//We'll use this rather than e.target because when we clicked the button it gets <i> as a target. We want to get rid of this situation.
+function minusPlusQuantity(){
+    console.log("ldlld");
+    let newQuantity;
+   if(this.className === "minus-btn"){
+    newQuantity= this.nextElementSibling.value;
+    this.nextElementSibling.value -= 1;
+    newQuantity -= 1;}
+   else if(this.className === "plus-btn"){
+    newQuantity = parseInt(this.previousElementSibling.value);
+    newQuantity += 1;
+    this.previousElementSibling.value = newQuantity;
+    
+   }
+
+   //Quantity can not be less than 1 or NaN
+   if(newQuantity<=0){
+    newQuantity = 1;
+    this.nextElementSibling.value = 1;
+}
+
+    const parentOfChangedItem = this.parentElement.parentElement;
+    let itemName,itemPrice;
+    //We'll get the updated product name and price then we will update them.
+    parentOfChangedItem.childNodes.forEach(function(element){
+        if(element.className === "description"){
+            //We'll send the product_name(key) and remove it from storage.
+            itemName = element.childNodes[1].innerHTML;
+            console.log("Item Name", itemName);
+            
+        }else if(element.className === "total-price"){
+            itemPrice = element;
+
+        }
+    
+    });
+
+    
+    updateItemAfterQuantityChanged(itemName, itemPrice, newQuantity);
+    updateSummaryBasket();
 
 }
