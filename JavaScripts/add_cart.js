@@ -8,6 +8,7 @@ const summary_total_price = document.querySelector(".summary-total-price");
 const payment_method = document.getElementById("paymentMethod");
 const pay_and_buy_button = document.querySelector("#summary-buy-button");
 const basket_empty = document.querySelector(".container-fluid.mt-100");
+const basket_cart_quantity = document.getElementById("basket-cart-quantity");
 
 //Music play
 let on_off = document.getElementById("play-music");
@@ -38,6 +39,7 @@ eventListeners();
 
 //All event listeners will be here.
 function eventListeners(){ 
+    updateBasketQuantity(0);
     if(index_html){
         row.addEventListener("click",addToBasket);
     }
@@ -50,17 +52,18 @@ function eventListeners(){
         payment_method.addEventListener("change",checkPaymentMethod);
         pay_and_buy_button.addEventListener("click",payAndBuy);
         shopping_card.addEventListener("click",updateQuantityInput);
+        
     }
 
 }
 
 //With event Capturing we'll get which button clicked and according that also get the item information then add it to the storage
 function addToBasket(e){
+    
     if(e.target.className === "add-to-cart-btn button"){
         const product_card = e.target.parentElement.parentElement.childNodes;
         const product = makeProduct(product_card);
         addProduct(product); //product is a member of Product Class.
-
         //Alert message.
         const Toast = Swal.mixin({
             toast: true,
@@ -81,13 +84,16 @@ function addToBasket(e){
             title: 'Added to card!',
             
           })
+          updateBasketQuantity(1); //Update quantity 1.
           e.preventDefault();
     }else if(e.target.className === "buy-now-btn button"){
         const product_card = e.target.parentElement.parentElement.childNodes;
         const product = makeProduct(product_card);
         addProduct(product);
+        updateBasketQuantity(1); //Update quantity 1.
 
     }
+    
     
 }
 
@@ -155,7 +161,29 @@ function getProductsFromStorage(){
     return productItems;
 }
 
+//Function for getting basket quantity from storage.
+function getBasketQuantityFromStorage(){
 
+       let quantity = localStorage.getItem("basket_cart_quantity");
+       if(quantity == null){
+        localStorage.setItem("basket_cart_quantity",0);
+        quantity = 0;
+        console.log("quantity",quantity);
+       }
+       
+       return quantity;
+}
+
+//We'll update the basket-quantity
+function updateBasketQuantity(amount){
+    let quantity = parseInt(getBasketQuantityFromStorage());
+    //If it's the first item added to the basket        
+    quantity += amount;
+    basket_cart_quantity.innerHTML = quantity;
+    localStorage.setItem("basket_cart_quantity",quantity);
+
+    
+}
 
 
 //BASKET-HTML
@@ -269,16 +297,24 @@ function removeProductFromCart(e){
         //We removed the item from shopping-card
         var remove_item = e.target.parentElement.parentElement.parentElement;
         remove_item.remove();
+        //We need to take quantity of product to remove it from basket quantity
+        let products = getProductsFromStorage();
+        let itemQuantity;
 
         //Now we also should remove the item from storage
         remove_item.childNodes.forEach(function(element){
             if(element.className === "description"){
+                //Take the item's quantity
+                itemQuantity = products[element.childNodes[1].innerHTML].inCart;
                 //We'll send the product_name(key) and remove it from storage.
                 deleteProductFromStorage(element.childNodes[1].innerHTML);
             
             }
         
         });
+        console.log("itemQuantity",itemQuantity);
+        //update basket quantity
+        updateBasketQuantity(-parseInt(itemQuantity));
 
         //Alert message.
         const Toast = Swal.mixin({
@@ -412,6 +448,8 @@ function payAndBuy(e){
     confirmButtonText: 'Yes, buy it!'
     }).then((result) => {
     if (result.isConfirmed) {
+        //Clear the basket quantity
+        localStorage.removeItem("basket_cart_quantity");
         removeAllProductsFromStorage();
         Swal.fire(
         'Successed!',
@@ -436,7 +474,6 @@ function removeAllProductsFromStorage(){
 
 //Event Capturing for changing quantity.
 function updateQuantityInput(e){
-    console.log("id",e.target.id)
    if(e.target.id === "minus-btn"){
     e.target.addEventListener("click", minusPlusQuantity);
    }else if(e.target.id === "plus-btn"){
@@ -469,7 +506,7 @@ function quantityChanged(e){
     
     });
 
-    
+    // updateBasketQuantity(parseInt(newQuantity)-1);
     updateItemAfterQuantityChanged(itemName, itemPrice, newQuantity);
     updateSummaryBasket();
 }
@@ -491,12 +528,18 @@ function minusPlusQuantity(e){
    if(this.id === "minus-btn"){
     newQuantity= this.nextElementSibling.value;
     this.nextElementSibling.value -= 1;
-    newQuantity -= 1;}
+    newQuantity -= 1;
+    
+    if(parseInt(newQuantity) >= 1){
+        updateBasketQuantity(-1);
+    }
+    
+}
    else if(this.id === "plus-btn"){
     newQuantity = parseInt(this.previousElementSibling.value);
     newQuantity += 1;
     this.previousElementSibling.value = newQuantity;
-    
+    updateBasketQuantity(1);
    }
 
    //Quantity can not be less than 1 or NaN
