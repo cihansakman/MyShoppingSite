@@ -136,7 +136,8 @@ font-size: 18px;
 }
 
 .product-img{
-    width:100%;
+    width:300px;
+    height: 300px;
 }
 .searchbar{
     margin-bottom: auto;
@@ -200,7 +201,7 @@ font-size: 18px;
 }
 
 .product-name{
-    font-family: 'Amatic SC', cursive;
+    font-family: 'Bree Serif', serif;
     letter-spacing: 1.2px;
 }
 
@@ -212,3 +213,4 @@ font-size: 18px;
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');

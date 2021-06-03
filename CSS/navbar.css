@@ -5112,19 +5112,22 @@
     @media (max-width: 767.98px) {
       .basket-login {
         margin-bottom: 20px; } }
-    .basket-login p a {
+    .basket-login .basket-login-cover {
+      padding: 20px;
       border: 1px solid #e6e6e6; /* hover yokken border color*/
       width: fit-content;
       height: 40px;
       border-radius: 10%;
-      margin-right: 4px; }
-      .basket-login p a span {
+      margin-right: 4px;
+      margin-top: 20px;
+      margin-bottom: 0px;
+   }
+      .basket-login .basket-login-cover span {
         color: white; }
-      .basket-login p a:hover { /*hover olunca simgelerin rengi */
+      .basket-login li a:hover { /*hover olunca simgelerin rengi */
         background: #8ec78f;
         border-color: #8ec78f; }
-        .basket-loginp a:hover span {
-          color: rgb(77, 2, 250); } /*hover olunca simgelerin rengi */
+        
   
   
   .searchform {
@@ -5199,4 +5202,121 @@ ul .nav-item.dropdown:hover .dropdown-menu{
   left:-5px;
   font-family: sans-serif;
   font-size: 0.6rem;
+}
+
+
+
+
+
+
+.footer-32892 {
+  background-color: #202126;
+  padding: 3rem 0;
+  color: #888;
+  font-size: 16px; }
+  .footer-32892, .footer-32892 h3 {
+    font-family: "Poppins", sans-serif; }
+  .footer-32892 h3 {
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 30px; }
+  .footer-32892 p {
+    font-family: "Source Serif Pro", serif; }
+  .footer-32892 .row.gallery {
+    margin-right: -5px;
+    margin-left: -5px; }
+    .footer-32892 .row.gallery > [class^="col-"],
+    .footer-32892 .row.gallery > [class*=" col-"] {
+      padding-right: 5px;
+      padding-left: 5px; }
+  .footer-32892 .gallery a {
+    display: block;
+    margin-bottom: 10px;
+    -webkit-transition: .3s all ease;
+    -o-transition: .3s all ease;
+    transition: .3s all ease; }
+    .footer-32892 .gallery a:hover {
+      opacity: .5; }
+  .footer-32892 .quick-info li {
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 10px; }
+    .footer-32892 .quick-info li a {
+      color: #fff; }
+    .footer-32892 .quick-info li .icon {
+      font-size: 20px;
+      color: #f88020; }
+  .footer-32892 .subscribe {
+    position: relative; }
+    .footer-32892 .subscribe .form-control {
+      background-color: #292b31;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      border-radius: 30px;
+      height: 55px;
+      padding-left: 30px;
+      padding-right: 130px;
+      border: none;
+      color: #fff; }
+      .footer-32892 .subscribe .form-control::-webkit-input-placeholder {
+        color: #ccc;
+        font-size: 14px; }
+      .footer-32892 .subscribe .form-control::-moz-placeholder {
+        color: #ccc;
+        font-size: 14px; }
+      .footer-32892 .subscribe .form-control:-ms-input-placeholder {
+        color: #ccc;
+        font-size: 14px; }
+      .footer-32892 .subscribe .form-control:-moz-placeholder {
+        color: #ccc;
+        font-size: 14px; }
+    .footer-32892 .subscribe .btn-submit {
+      background: #f88020;
+      height: 47px;
+      border-radius: 30px;
+      padding-left: 30px;
+      padding-right: 30px;
+      color: #fff;
+      font-weight: bold;
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2); }
+  .footer-32892 .tweets li {
+    margin-bottom: 20px;
+    font-size: 15px;
+    font-style: italic;
+    font-family: "Source Serif Pro", serif; }
+    .footer-32892 .tweets li span {
+      color: #fff; }
+  .footer-32892 .footer-menu-wrap {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 2rem !important;
+    margin-top: 7rem; }
+  .footer-32892 .footer-menu {
+    margin-bottom: 0; }
+    .footer-32892 .footer-menu li {
+      display: inline-block; }
+      @media (max-width: 767.98px) {
+        .footer-32892 .footer-menu li {
+          display: block; } }
+      .footer-32892 .footer-menu li a {
+        padding: 10px;
+        display: inline-block;
+        color: #fff; }
+        @media (max-width: 767.98px) {
+          .footer-32892 .footer-menu li a {
+            display: block;
+            padding-left: 0px; } }
+      .footer-32892 .footer-menu li:first-child a {
+        padding-left: 0; }
+  .footer-32892 .site-logo {
+    color: #fff;
+    font-size: 20px; }
+
+
+.img-fluid{
+  width:150px !important; /* you can use % */
+    height: auto !important;
 }
