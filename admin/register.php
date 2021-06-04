@@ -61,13 +61,21 @@ include("includes/sidebar.php");
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
   <div class="card-header py-3">
-    <h6 class="m-0 font-weight-bold text-primary">Admin Profile 
+    <div class="row d-flex justify-content-between">
+      <h6 class="m-0 font-weight-bold text-primary">Admin Profile 
 
-            <!-- Here in the New Product button we're calling the MODAL -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addadminprofile">
-              Add Admin Profile 
-            </button>
-    </h6>
+              <!-- Here in the New Product button we're calling the MODAL -->
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addadminprofile">
+                Add Admin Profile 
+              </button>
+      </h6>
+
+      <div class="input-group" style="width:50%;">
+          <input type="search" class="form-control rounded" name="filter" id="filter" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+          <button type="button" class="btn btn-outline-primary"><i class="fas fa-fw fa-search"></i></button>
+      </div>
+
+    </div>
   </div>
 
   <div class="card-body">
@@ -134,9 +142,9 @@ include("includes/sidebar.php");
 
            ?>
      
-          <tr>
+          <tr class="table-row">
             <td> <?php echo $row['id']; ?> </td>
-            <td> <?php echo $row['user_name']; ?></td>
+            <td class="product-name-row"> <?php echo $row['user_name']; ?></td>
             <td> <?php echo $row['user_surname']; ?></td>
             <td> <?php echo $row['user_email']; ?></td>
          

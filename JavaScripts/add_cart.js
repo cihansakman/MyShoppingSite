@@ -60,10 +60,6 @@ function checkPaymentMethod(){
 }
 
 
-
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
 /*
 //When payment is done
 function payAndBuy(e){
@@ -95,9 +91,5 @@ function payAndBuy(e){
     
 }*/
 
-
-function removeAllProductsFromStorage(){
-    localStorage.removeItem("products");
-}
 
 

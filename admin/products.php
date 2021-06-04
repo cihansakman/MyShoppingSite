@@ -81,16 +81,26 @@ include("includes/sidebar.php");
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
   <div class="card-header py-3">
-    <h6 class="m-0 font-weight-bold text-primary">Products
+    <div class="row d-flex justify-content-between">
+      <h6 class="m-0 font-weight-bold text-primary">Products
 
-            <!-- Here in the New Product button we're calling the MODAL -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#productPage">
-             New Product
-            </button>
-    </h6>
+              <!-- Here in the New Product button we're calling the MODAL -->
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#productPage">
+              New Product
+              </button>
+      </h6>
+
+      <div class="input-group" style="width:50%;">
+          <input type="search" class="form-control rounded" name="filter" id="filter" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+          <button type="button" class="btn btn-outline-primary"><i class="fas fa-fw fa-search"></i></button>
+      </div>
+    
+    
+    </div>
+    
   </div>
 
-  <div class="card-body">
+  <div class="card-body" style="min-width:1500px;">
 
 
 
@@ -157,8 +167,8 @@ include("includes/sidebar.php");
 
            ?>
      
-          <tr>
-            <td> <?php echo $row['product_name']; ?> </td>
+          <tr class="table-row">
+            <td class="product-name-row"> <?php echo $row['product_name']; ?> </td>
             <td> <?php echo $row['product_desc']; ?></td>
             <td> <?php echo $row['product_price']; ?></td>
             <td> <?php echo $row['product_img_url']; ?></td>
@@ -215,7 +225,7 @@ include("includes/sidebar.php");
 
    
 <?php 
-    include("includes/footer.php");
+  include("includes/footer.php");
   include("includes/scripts.php");
 
     

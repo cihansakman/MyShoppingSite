@@ -74,9 +74,9 @@ foreach($shopping_products as $product){?>
         </div>
       <!-- End of Product-->
 
-<!-- End of foreach for printing products in the basket-->
+
 <?php
-}
+} // End of foreach for printing products in the basket
 ?>
 
       </div>
@@ -144,7 +144,8 @@ foreach($shopping_products as $product){?>
 </div>
 
 <?php
-}else{
+} //end of -> if(isset($_SESSION[$session_name]) && ($_SESSION[$session_name]["summary"]["summary_total_count"] > 0 )){
+else{ //If basket is empty
 
 
 ?>
