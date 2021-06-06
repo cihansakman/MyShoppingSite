@@ -73,7 +73,6 @@ while ($apply_sql = mysqli_fetch_assoc($sql_command)):
       <p class="price">$<?php echo $apply_sql['product_price']; ?></p>
       <div class="buy-now-add-basket">
         <button class="add-to-cart-btn button" product_id="<?php echo $apply_sql['product_id']; ?>" role="button"><i class="fa fa-tags buy-add-icon" aria-hidden="true"></i>Add to Cart</button>
-        <!-- <button class="buy-now-btn button" product_id="<?php echo $apply_sql['product_id']; ?>" role="button"><i class="fa fa-shopping-cart buy-add-icon" aria-hidden="true"></i>Buy Now</button> -->
       </div>
   </div>
 </div>
@@ -101,7 +100,7 @@ if(isset($_POST['search_btn'])){ //If there is a search request
       <p class="price">$<?php echo $apply_sql['product_price']; ?></p>
       <div class="buy-now-add-basket">
         <button class="add-to-cart-btn button" product_id="<?php echo $apply_sql['product_id']; ?>" role="button"><i class="fa fa-tags buy-add-icon" aria-hidden="true"></i>Add to Cart</button>
-        <button class="buy-now-btn button" product_id="<?php echo $apply_sql['product_id']; ?>" role="button"><i class="fa fa-shopping-cart buy-add-icon" aria-hidden="true"></i>Buy Now</button>
+        <!-- <button class="buy-now-btn button" product_id="<?php echo $apply_sql['product_id']; ?>" role="button"><i class="fa fa-shopping-cart buy-add-icon" aria-hidden="true"></i>Buy Now</button> -->
       </div>
   </div>
 </div>

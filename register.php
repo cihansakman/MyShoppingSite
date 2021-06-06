@@ -20,10 +20,16 @@ session_start();
         //That's mean there is another user with that email. Set an error message.
        if(mysqli_num_rows($query_run) >0){
         $_SESSION['status'] = 'You cannot use this email address!';
+        header('Location: register.php'); 
         
        }
 
-       else if(!is_numeric($name) && !is_numeric($name)){
+       //Password length should be more than 6 
+       else if(strlen($password) <= 6){
+        $_SESSION['status'] = 'Password length should be more than 6!';
+       }
+
+       else if(!is_numeric($name) && !is_numeric($surname)){
             //save to db
             //We'll assign number user_id for our users
             $query = "INSERT INTO users_db (password, user_name, user_surname, user_email) VALUES ('$password','$name','$surname','$email')";
@@ -80,7 +86,7 @@ session_start();
   if(isset($_SESSION['status']) && $_SESSION['status'] != ''){
 
     //Print the erorr message and unset the SESSION
-    echo '<div class="alert alert-danger justify-content-center col-lg-10" role="alert"> <strong>
+    echo '<div class="alert alert-danger justify-content-center col-lg-12" role="alert"> <strong>
     '.$_SESSION['status'] .'<button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>

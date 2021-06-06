@@ -80,6 +80,9 @@ if(isset($_POST['basket_pay_and_buy_btn'])){
 
     if(isset($_SESSION[$session_name])){
 
+    //Print a success message
+    $_SESSION['success'] = 'Your payment was successfull!';
+
     //We'll unset the SESSION
     unset($_SESSION[$session_name]);
     header("Location: basket.php");

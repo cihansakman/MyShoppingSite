@@ -6,14 +6,15 @@ if(isset($_SESSION['user_id'])){
   //We'll call the logged in user's information.
   $user_id = $_SESSION['user_id'];
 
-}else{
-  header("Location: login.php");
 }
+//else{
+//   header("Location: login.php");
+// }
 
 
 
 ?>
-
+<title>Basket</title>
 
 <?php include('includes/header.php');
 		include('includes/navbar.php'); 
@@ -133,7 +134,7 @@ foreach($shopping_products as $product){?>
             <input type="text" class="form-control basket" id="info-credit-card" placeholder="Credit Card Number">
           </div>
             <input type="submit" name="basket_pay_and_buy_btn" class="btn btn-light active" id="summary-buy-button" role="button" value="Pay and Buy">
-            <input type="submit" name="basket_pay_and_buy_btn" class="btn btn-light active" id="summary-checkout-button" role="button" value="Continue Shopping">
+            <a href="index.php" class = "btn btn-light active" id="summary-checkout-button" role="button">Continue to Shopping</a>
         </form>
         
 
@@ -151,6 +152,18 @@ else{ //If basket is empty
 ?>
 
 <div class="container mt-5">
+<?php
+// If user pay and buy successfully.
+  if(isset($_SESSION['success']) && $_SESSION['success'] != ''){
+      
+      //Print the success message and unset the SESSION
+      echo '<div class="alert alert-success alert-dismissable" id="flash-msg">
+      <button aria-hidden="true" data-dismiss="alert" class="close" type="button"><i class="icon fa fa-times-circle"></i></button>
+      <h4><i style="margin-right:5rem; margin-top:1rem; color:white;" class="icon fa fa-check-circle fa-2x"></i>'.$_SESSION['success'] .'</h4>
+      </div>';
+      unset($_SESSION['success']);
+  }
+?>
   <div class="row"> 
       <div class="col-md-12">
           <div class="card">

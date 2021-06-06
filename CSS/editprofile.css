@@ -13,10 +13,10 @@ a{color:inherit;text-decoration:none}
 .login-wrap{
 	width: 100%;
 	margin:2rem auto; /* 2rem for top-bottom and auto for centrize it*/
-	max-width:750px;
+	max-width:650px;
 	min-height:510px;
 	position:relative;
-	background:url(https://images.unsplash.com/photo-1622694814747-2b0857b903cb?ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Njd8fHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60) no-repeat center;
+	background:url(https://images.unsplash.com/photo-1496293455970-f8581aae0e3b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=701&q=80) no-repeat center;
 	background-size: cover;
 	box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
 }
@@ -24,8 +24,8 @@ a{color:inherit;text-decoration:none}
 	width:100%;
 	height:100%;
 	position:absolute;
-	padding:3rem 70px 50px 70px;
-	background:rgba(0,0,0,0.25); /* arkaplanı koyulaştırıyor.!!!*/
+	padding:4rem 70px 50px 70px;
+	background:rgb(0 0 0 / 55%); /* arkaplanı koyulaştırıyor.!!!*/
 }
 .login-html .sign-in-htm,
 .login-html .for-pwd-htm{
@@ -50,7 +50,7 @@ a{color:inherit;text-decoration:none}
 .login-form .group .label,
 .login-form .group .button{
 	text-transform:uppercase;
-	color:#e7e2dc;
+	color:#f5f3f0;
 }
 .login-html .tab{
 	font-size:22px;
@@ -64,6 +64,7 @@ a{color:inherit;text-decoration:none}
 .login-html .for-pwd:checked + .tab{
 	color:#f4b373;
 	border-color:#938869;
+	margin-left: 3.25rem;
 
 }
 .login-form{
@@ -80,23 +81,24 @@ a{color:inherit;text-decoration:none}
 .login-form .group .label,
 .login-form .group .input,
 .login-form .group .button{
-	width:100%;
-	color:#fff;
+	width:80%;
+	color:rgb(0, 0, 0);
 	display:block;
+	margin: 0 auto;
 }
 .login-form .group .input,
 .login-form .group .button{
 	border:none;
-	padding:15px 20px;
+	padding:13px 20px;
 	border-radius:25px;
-	background:rgb(254 195 111 / 49%);
+	background:#ededed;
 }
 .login-form .group input[data-type="password"]{
 	text-security:circle;
 	-webkit-text-security:circle;
 }
 .login-form .group .label{
-	color:rgb(233, 225, 225);
+	color:rgb(253, 253, 253);
 	font-size:12px;
 }
 .login-form .group .button{

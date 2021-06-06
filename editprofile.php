@@ -1,16 +1,7 @@
-<?php 
-
-include 'includes/connection.php';
-session_start();
-include('includes/functions.php') ;
-include 'includes/navbar.php';
-include 'includes/editprofile.php';
-?>
-
 <!doctype html>
 <html lang="en">
   <head>
-  	<title>CiShop</title>
+  	<title>My Profile</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -18,7 +9,7 @@ include 'includes/editprofile.php';
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="icon" href="images/cishop-01.png">
 	
   <link rel="stylesheet" href="CSS/navbar.css">
@@ -29,6 +20,16 @@ include 'includes/editprofile.php';
  
 
 	</head>
+
+<?php 
+include 'includes/connection.php';
+session_start();
+include('includes/functions.php') ;
+include 'includes/navbar.php';
+include 'includes/editprofile.php';
+?>
+
+
 	<body style="background-color: #ededed">
 
 <link rel="stylesheet" href="CSS/basket.css">
@@ -50,7 +51,7 @@ $user_info = mysqli_fetch_assoc($query_run);
   if(isset($_SESSION['success']) && $_SESSION['success'] != ''){
       
       //Print the success message and unset the SESSION
-      echo '<div style="width: 750px; margin:1rem auto 0 auto;" class="alert alert-success justify-content-center" role="alert"> <strong>
+      echo '<div style="width: 650px; margin:1rem auto 0 auto;" class="alert alert-success justify-content-center" role="alert"> <strong>
     '.$_SESSION['success'] .'<button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
           </button>
@@ -62,7 +63,7 @@ $user_info = mysqli_fetch_assoc($query_run);
   if(isset($_SESSION['status']) && $_SESSION['status'] != ''){
 
     //Print the erorr message and unset the SESSION
-    echo '<div style="width: 750px; margin:1rem auto 0 auto;" class="alert alert-danger justify-content-center" role="alert"> <strong>
+    echo '<div style="width: 650px; margin:1rem auto 0 auto;" class="alert alert-danger justify-content-center" role="alert"> <strong>
     '.$_SESSION['status'] .'<button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>

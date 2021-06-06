@@ -52,33 +52,6 @@ $(document).ready(function(){
     })
 
 
-    $(".buy-now-btn").click(function(){
-
-        window.location.href = "http://localhost/MY WEB SITE/basket.php";
-        
-        url = "http://localhost/MY WEB SITE/index.php";
-        //We'll send the clicked product's id
-        data = {
-            process : "buyNowBtn",
-            product_id : $(this).attr("product_id")
-            
-        }
-        //We'll send data to url as a JSON data.
-        $.post(url, data, function(response){
-            var ret = response.split(" ");
-            response = ret[0];
-            response = response.replace ( /[^\d.]/g, '' );
-            console.log(response);
-            $("#basket-cart-quantity").text(response);
-            window.location.reload();
-            
-        })
-
-        
-    })
-
-
-
     $(".btn.fa.fa-trash-o.fa-lg.delete-btn").click(function(){
 
 
@@ -137,6 +110,10 @@ $(document).ready(function(){
             
         })
     })
+
+    //Dissmiss the success message after successfull payment.
+    $("#flash-msg").delay(3000).fadeOut("slow");
+
 
 
 
